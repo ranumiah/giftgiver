@@ -5,6 +5,9 @@ exports[`App Commonent renders correctly 1`] = `
   <h2>
     Gift Giver
   </h2>
+  <div
+    className="gift-list"
+  />
   <Button
     active={false}
     className="btn-add"
