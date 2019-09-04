@@ -5,5 +5,15 @@ exports[`App Commonent renders correctly 1`] = `
   <h2>
     Gift Giver
   </h2>
+  <Button
+    active={false}
+    className="btn-add"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+    variant="primary"
+  >
+    Add Gift
+  </Button>
 </div>
 `;
