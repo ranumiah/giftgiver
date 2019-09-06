@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gift Component renders correctly 1`] = `
+<div>
+  <Form
+    inline={false}
+  >
+    <FormGroup>
+      <FormLabel
+        column={false}
+        srOnly={false}
+      >
+        Person
+      </FormLabel>
+      <FormControl
+        className="input-person"
+        onChange={[Function]}
+      />
+    </FormGroup>
+  </Form>
+</div>
+`;
