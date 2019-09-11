@@ -63,7 +63,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js --watchAll --env=jsdom --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -136,7 +136,8 @@
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ]
+    ],
+    "collectCoverage": true
   },
   "babel": {
     "presets": [
