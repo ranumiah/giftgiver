@@ -4,7 +4,11 @@ import Gift from './Gift'
 
 
 describe('Gift Component', () => {
-    const gift = shallow(<Gift />);
+    const mockRemove = jest.fn();
+    const id = 1;
+    const props = { gift: { id }, removeGift: mockRemove }
+    //ES6 spread attribute syntax {...props} instead of gift={props.gift} removeGift={props.removeGift}
+    const gift = shallow(<Gift {...props} />);
 
     it('renders correctly', () => {
         expect(gift).toMatchSnapshot();
@@ -36,5 +40,15 @@ describe('Gift Component', () => {
             expect(gift.state().present).toEqual(present);
         });
     });
+
+    describe('when clicking the `Remove Gift` button', () => {
+        beforeEach(() => {
+            gift.find('.btn-remove').simulate('click');
+        });
+
+        it('calls the removeGift callback', () => {
+            expect(mockRemove).toHaveBeenCalledWith(id);
+        });
+    })
 
 });

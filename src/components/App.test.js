@@ -14,6 +14,7 @@ describe('App Component', () => {
     })
 
     describe('when clicking the `add-gift` button', () => {
+        const id = 1;
 
         beforeEach(() => {
             app.find('.btn-add').simulate('click');
@@ -24,7 +25,9 @@ describe('App Component', () => {
         })
 
         it('adds a new gift to `state`', () => {
-            expect(app.state().gifts).toEqual([{ id: 1 }]);
+            // because the key and value is the same ES6 will allow this
+            // expect(app.state().gifts).toEqual([{ id }]);
+            expect(app.state().gifts).toEqual([{ id: id }]);
         })
 
         it('adds a new gift to the rendered list', () => {
@@ -35,6 +38,15 @@ describe('App Component', () => {
             expect(app.find('Gift').exists()).toBe(true);
         });
 
+        describe('', () => {
+            beforeEach(() => {
+                app.instance().removeGift(id);
+            });
+
+            it('removes the gift from `state`', () => {
+                expect(app.state().gifts).toEqual([]);
+            });
+        })
     })
 
 });
